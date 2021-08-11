@@ -34,8 +34,10 @@ TFVGetResults<-function(Resultfile,parameter,RunName,stations=NULL, dailyaverage
   {
     Model<-Model %>%
       dplyr::mutate(Time=lubridate::floor_date(.data$Time,"day")) %>%
-      dplyr::group_by(.data$Time,.data$ID,.data$Data,.data$Location) %>%
-      dplyr::summarise(Value=mean(.data$Value))
+      dplyr::group_by(.data$Time,.data$Data,.data$Site) %>%
+      dplyr::summarise(Value=mean(.data$Value)) %>%
+      dplyr::ungroup() %>%
+      dplyr::arrange(Site)
   }
 
   return(Model)
@@ -66,7 +68,7 @@ TFVGetResults<-function(Resultfile,parameter,RunName,stations=NULL, dailyaverage
 #'@importFrom grDevices rgb
 
 
-TFVPlotagainstHydstra<-function(Sim,Obs,ylab,file,width=17,height=22,order=NULL,
+TFVPlotagainstObserved<-function(Sim,Obs,ylab,file,width=17,height=22,order=NULL,
                                 scales="fixed",cols=NULL,newnames=NULL,ylim=NA,nlegendrow=1)
 {
 
