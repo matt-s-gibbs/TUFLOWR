@@ -33,6 +33,7 @@
 #'
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
+#' @export
 
 TFVInitCons<-function(file,fgdb,initialvaluesfile,outputfile,cellsize=50,ncell=50000)
 {
@@ -118,5 +119,5 @@ elements<-elements %>% dplyr::bind_cols(dat)
 }
 
 print(summary(elements))
-readr::write_csv(elements,outputfile)
+write.csv(elements,outputfile)
 }
