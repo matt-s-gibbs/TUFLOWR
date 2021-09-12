@@ -20,7 +20,7 @@
 #'
 #' interpolation is undertaken using inverse distance weighting from the gstat package, with the default weighting power of 2.
 #'
-#' Nothing is returned to the environment, with the initial conditions generated written to outputfile. Summary metrics are printed to screen to allows for some quick QA
+#' @return Nothing is returned to the environment, with the initial conditions generated written to outputfile. Summary metrics are printed to screen to allows for some quick QA
 #'
 #' @examples
 #' \dontrun{
@@ -33,6 +33,7 @@
 #'
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
+#' @importFrom utils write.csv
 #' @export
 
 TFVInitCons<-function(file,fgdb,initialvaluesfile,outputfile,cellsize=50,ncell=50000)

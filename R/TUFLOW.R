@@ -37,7 +37,7 @@ TFVGetResults<-function(Resultfile,parameter,RunName,stations=NULL, dailyaverage
       dplyr::group_by(.data$Time,.data$Data,.data$Site) %>%
       dplyr::summarise(Value=mean(.data$Value)) %>%
       dplyr::ungroup() %>%
-      dplyr::arrange(Site)
+      dplyr::arrange(.data$Site)
   }
 
   return(Model)
@@ -57,10 +57,12 @@ TFVGetResults<-function(Resultfile,parameter,RunName,stations=NULL, dailyaverage
 #' @param ylim - specify y axis limits manually as two number vector, e.g. c(0,1)
 #' @param nlegendrow - specify the number of rows in the legend, increase this if the scenario names go off the figure. Defaults to 1
 #'
+#' @return Nothing is returned to the R environment. The generated figure is saved to file.
+#'
 #' @examples
 #' \dontrun{
 #' stations<-c("A4261043", "A4261134","A4261135","A4260572","A4260633","A4261209","A4261165")
-#' TFVPlotagainstHydstra(Sim,Obs,"Salinity (g/L)","salinity.png",order=stations)
+#' TFVPlotagainstObserved(Sim,Obs,"Salinity (g/L)","salinity.png",order=stations)
 #' }
 
 #'

@@ -38,9 +38,10 @@ Columns 6 and beyond should be values and will be interpolated. Each column will
 
 cellsize and ncell are used to specify the resolution of the interpolation. ncell is in units of the mesh coordinates, e.g. m or degrees
 
-interpolation is undertaken using inverse distance weighting from the gstat package, with the default weighting power of 2.
-
-Nothing is returned to the environment, with the initial conditions generated written to outputfile. Summary metrics are printed to screen to allows for some quick QA}
+interpolation is undertaken using inverse distance weighting from the gstat package, with the default weighting power of 2.}
+}
+\value{
+Nothing is returned to the environment, with the initial conditions generated written to outputfile. Summary metrics are printed to screen to allows for some quick QA
 }
 \description{
 Generate a TFV initial conditions file from point observations

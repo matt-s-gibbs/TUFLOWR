@@ -44,13 +44,16 @@ TFVPlotagainstObserved(
 
 \item{nlegendrow}{- specify the number of rows in the legend, increase this if the scenario names go off the figure. Defaults to 1}
 }
+\value{
+Nothing is returned to the R environment. The generated figure is saved to file.
+}
 \description{
 ggplot of TFV model runs and observed data
 }
 \examples{
 \dontrun{
 stations<-c("A4261043", "A4261134","A4261135","A4260572","A4260633","A4261209","A4261165")
-TFVPlotagainstHydstra(Sim,Obs,"Salinity (g/L)","salinity.png",order=stations)
+TFVPlotagainstObserved(Sim,Obs,"Salinity (g/L)","salinity.png",order=stations)
 }
 
 }
