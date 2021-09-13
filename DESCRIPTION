@@ -1,14 +1,17 @@
 Package: TUFLOWR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Helper Functions for TUFLOW FV Models
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: person("Matt", "Gibbs", email = "gibbs.ms@gmail.com",
+    role = c("aut", "cre"))
+Author: Matt Gibbs [aut, cre]
+Maintainer: Matt Gibbs <gibbs.ms@gmail.com>
+URL: https://github.com/matt-s-gibbs/TUFLOWR
+BugReports: https://github.com/matt-s-gibbs/TUFLOWR/issues
+Description: Helper functions for TUFLOW finite volume models. Current functionality includes reading in and plotting
+    output POINTS files and generating initial conditions based on point observations.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports:
   raster,
   readr,
