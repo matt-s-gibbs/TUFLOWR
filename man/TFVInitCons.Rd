@@ -24,27 +24,29 @@ TFVInitCons(
 
 \item{cellsize}{size of cells to interpolate the observations onto}
 
-\item{ncell}{number of cells to interpolate the observations onto
-
-The shapefile should be a polygon shape file, with different zones to interpolate within. This can be useful to ensure
-interpolations are physically sensible, for example where there is a barrier between fresh and saline water, or a
-storage above a lower river. Projections are not handled by this function, so the shapefile should be in the same projection as the mesh.
-
-The initialvaluesfile should have 4 columns of information:
-Column 1 as point index
-Column 2 and 3, columns named "X" and "Y", with the coordinates of the point observation, in the same projection as the mesh.
-Columns 4 and 5 are reserved for point information, e.g. a station number and station name. These are not used, but are provided for documentation and if the file is used for specifying output locations
-Columns 6 and beyond should be values and will be interpolated. Each column will be interpolated for each zone, allowing for multiple initial conditions (e.g. H, Sal, Temp, tracers)
-
-cellsize and ncell are used to specify the resolution of the interpolation. ncell is in units of the mesh coordinates, e.g. m or degrees
-
-interpolation is undertaken using inverse distance weighting from the gstat package, with the default weighting power of 2.}
+\item{ncell}{number of cells to interpolate the observations onto}
 }
 \value{
 Nothing is returned to the environment, with the initial conditions generated written to outputfile. Summary metrics are printed to screen to allows for some quick QA
 }
 \description{
 Generate a TFV initial conditions file from point observations
+}
+\details{
+The shapefile should be a polygon shape file, with different zones to interpolate within. This can be useful to ensure
+interpolations are physically sensible, for example where there is a barrier between fresh and saline water, or a
+storage above a lower river. Projections are not handled by this function, so the shapefile should be in the same projection as the mesh.
+
+The initialvaluesfile should have at least 6 columns of information:
+
+* Column 1 as point index
+* Column 2 and 3, columns named "X" and "Y", with the coordinates of the point observation, in the same projection as the mesh.
+* Columns 4 and 5 are reserved for point information, e.g. a station number and station name. These are not used, but are provided for documentation and if the file is used for specifying output locations
+* Columns 6 and beyond should be values and will be interpolated. Each column will be interpolated for each zone, allowing for multiple initial conditions. The column name should match the model scalar (e.g. H, SAL, TEMP, trace_1)
+
+cellsize and ncell are used to specify the resolution of the interpolation. ncell is in units of the mesh coordinates, e.g. m or degrees
+
+interpolation is undertaken using inverse distance weighting from the gstat package, with the default weighting power of 2.
 }
 \examples{
 \dontrun{

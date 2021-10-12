@@ -6,15 +6,17 @@
 #' @param cellsize size of cells to interpolate the observations onto
 #' @param ncell number of cells to interpolate the observations onto
 #'
+#' @details
 #' The shapefile should be a polygon shape file, with different zones to interpolate within. This can be useful to ensure
 #' interpolations are physically sensible, for example where there is a barrier between fresh and saline water, or a
 #' storage above a lower river. Projections are not handled by this function, so the shapefile should be in the same projection as the mesh.
 #'
-#' The initialvaluesfile should have 4 columns of information:
-#' Column 1 as point index
-#' Column 2 and 3, columns named "X" and "Y", with the coordinates of the point observation, in the same projection as the mesh.
-#' Columns 4 and 5 are reserved for point information, e.g. a station number and station name. These are not used, but are provided for documentation and if the file is used for specifying output locations
-#' Columns 6 and beyond should be values and will be interpolated. Each column will be interpolated for each zone, allowing for multiple initial conditions (e.g. H, Sal, Temp, tracers)
+#' The initialvaluesfile should have at least 6 columns of information:
+#'
+#' * Column 1 as point index
+#' * Column 2 and 3, columns named "X" and "Y", with the coordinates of the point observation, in the same projection as the mesh.
+#' * Columns 4 and 5 are reserved for point information, e.g. a station number and station name. These are not used, but are provided for documentation and if the file is used for specifying output locations
+#' * Columns 6 and beyond should be values and will be interpolated. Each column will be interpolated for each zone, allowing for multiple initial conditions. The column name should match the model scalar (e.g. H, SAL, TEMP, trace_1)
 #'
 #' cellsize and ncell are used to specify the resolution of the interpolation. ncell is in units of the mesh coordinates, e.g. m or degrees
 #'
@@ -120,5 +122,5 @@ elements<-elements %>% dplyr::bind_cols(dat)
 }
 
 print(summary(elements))
-write.csv(elements,outputfile)
+write.csv(elements,outputfile,row.names = FALSE)
 }
