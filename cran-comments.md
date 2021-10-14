@@ -1,3 +1,15 @@
+## Resubmission
+* Angle brackets added to URL and BugReports links in DESCRIPTION
+* The software name 'TUFLOW FV' has been enclosed in single quotes in DESCRIPTION title and description.
+* I can't find the issue with writing to the user directory I'm sorry. All examples are in \dontrun{} blocks and there are no vignettes or tests. The example for TFVInitCons() now does create an output file using tempdir(). One print() statement has been removed. 
+
+>Please ensure that your functions do not write by default or in your
+examples/vignettes/tests in the user's home filespace (including the
+package directory and getwd()). This is not allowed by CRAN policies. In
+your examples/vignettes/tests you can write to tempdir().
+
+Thank you for the fast review and useful comments.
+
 ## Test environments
 * local R installation, R 4.0.0
 * win-builder release 4.1.1 (2021-08-10)
@@ -11,5 +23,3 @@
   Maintainer: 'Matt Gibbs <gibbs.ms@gmail.com>'
 
 0 errors √ | 0 warnings √ | 1 note x
-
-* This is a new release.

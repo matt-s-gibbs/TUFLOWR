@@ -20,7 +20,7 @@ TFVPlotagainstObserved(
 )
 }
 \arguments{
-\item{Sim}{modelled output, imported using TFVGetResults()}
+\item{Sim}{modelled output, imported using 'TFVGetResults()'}
 
 \item{Obs}{observed data. This is bind_rows() to Sim, so requires the same columns and headings. Obs can be NULL if all data of interest is in Sim}
 

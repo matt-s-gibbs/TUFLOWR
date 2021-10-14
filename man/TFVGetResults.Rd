@@ -2,7 +2,7 @@
 % Please edit documentation in R/TUFLOW.R
 \name{TFVGetResults}
 \alias{TFVGetResults}
-\title{Read in one variable out of a TFV POINTS File. Assumes the points file ID is a Hydstra site ID.}
+\title{Read in one variable out of a TFV POINTS File. Assumes the points file ID is a observation station site ID.}
 \usage{
 TFVGetResults(
   Resultfile,
@@ -27,7 +27,7 @@ TFVGetResults(
 tibble with data in long format, with columns: Time, Site, Value, Data
 }
 \description{
-Read in one variable out of a TFV POINTS File. Assumes the points file ID is a Hydstra site ID.
+Read in one variable out of a TFV POINTS File. Assumes the points file ID is a observation station site ID.
 }
 \examples{
 \dontrun{

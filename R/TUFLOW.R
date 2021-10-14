@@ -1,4 +1,4 @@
-#' Read in one variable out of a TFV POINTS File. Assumes the points file ID is a Hydstra site ID.
+#' Read in one variable out of a TFV POINTS File. Assumes the points file ID is a observation station site ID.
 #' @param Resultfile TUFLOW output POINTS file
 #' @param parameter - parameter to plot, must be in column heading, e.g. "SAL"
 #' @param RunName - name of model run to add to a column, for ease of combining/plotting
@@ -44,7 +44,7 @@ TFVGetResults<-function(Resultfile,parameter,RunName,stations=NULL, dailyaverage
 }
 
 #' ggplot of TFV model runs and observed data
-#' @param Sim modelled output, imported using TFVGetResults()
+#' @param Sim modelled output, imported using 'TFVGetResults()'
 #' @param Obs observed data. This is bind_rows() to Sim, so requires the same columns and headings. Obs can be NULL if all data of interest is in Sim
 #' @param ylab label for y axis
 #' @param file file to save figure to

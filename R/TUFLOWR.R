@@ -1,10 +1,7 @@
 #' TUFLOWR
 #'
-#' The SWTools package provides four categories of important functions:
-#' SILO, Aquarius, Source and TUFLOW.
-
-#' @section TUFLOW functions:
-#' For plotting POINTS files written by TUFLOW (tested with TUFLOW FV)
+#' Helper functions for 'TUFLOW FV' models. Current functionality includes reading in and plotting
+#' output POINTS files and generating initial conditions based on point observations.
 #'
 #'
 #' @docType package
