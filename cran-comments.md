@@ -10,25 +10,18 @@ examples/vignettes/tests in the user's home filespace (including the
 package directory and getwd()). This is not allowed by CRAN policies. In
 your examples/vignettes/tests you can write to tempdir().
 
-
-
 ## Test environments
 * local R installation, R 4.0.0
 * win-builder release 4.1.1 (2021-08-10)
+* win-builder devel (2021-10-07 r81018)
 * rhub Windows Server 2008 R2 SP1, R-devel, 32/64 bit
 * rhub Ubuntu Linux 20.04.1 LTS, R-release, GCC
 * rhub Fedora Linux, R-devel, clang, gfortran
 
 ## R CMD check results
 
-> checking DESCRIPTION meta-information ... NOTE
-BugReports field is not a suitable URL but contains an email address:
-   use the Contact field instead
-   
-BugReports contains a valid URL, not an email address.
-
 > checking CRAN incoming feasibility ... NOTE
   Maintainer: 'Matt Gibbs <gibbs.ms@gmail.com>'
   New submission
 
-0 errors √ | 0 warnings √ | 2 notes x
+0 errors √ | 0 warnings √ | 1 note x
