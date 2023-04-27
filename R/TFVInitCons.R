@@ -76,7 +76,7 @@ elements<-elements %>% dplyr::arrange(.data$ID)
 
 initvals<-readr::read_csv(initialvaluesfile)
 
-Wall<-rgdal::readOGR(dsn=fgdb,layer="Zones")
+Wall<-sf::read_sf(dsn=fgdb,layer="Zones")
 
 P<-sp::SpatialPoints(initvals[,c("X","Y")],proj4string = Wall@proj4string)
 Pall<-sp::SpatialPointsDataFrame(P,initvals)

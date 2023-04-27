@@ -1,7 +1,7 @@
 Package: TUFLOWR
 Type: Package
 Title: Helper Functions for 'TUFLOW FV' Models
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Matt", "Gibbs", email = "gibbs.ms@gmail.com",
     role = c("aut", "cre"))
 Author: Matt Gibbs [aut, cre]
@@ -18,7 +18,7 @@ Imports:
   tibble,
   tidyr,
   stringr,
-  rgdal,
+  sf,
   sp,
   dplyr,
   gstat,
@@ -26,4 +26,6 @@ Imports:
   ggplot2,
   rlang,
   magrittr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
+Suggests: 
+    covr
