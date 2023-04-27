@@ -3,7 +3,10 @@
 
 # TUFLOWR
 
-<!-- badges: start --> [![R-CMD-check](https://github.com/matt-s-gibbs/TUFLOWR/workflows/R-CMD-check/badge.svg)](https://github.com/matt-s-gibbs/TUFLOWR/actions) <!-- badges: end -->
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/matt-s-gibbs/TUFLOWR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/matt-s-gibbs/TUFLOWR/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 TUFLOWR provides some helper functions for working with [TUFLOW
 FV](https://www.tuflow.com/products/tuflow-fv/) models in R. Current
