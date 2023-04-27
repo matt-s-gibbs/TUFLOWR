@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # TUFLOWR
 
 <!-- badges: start -->
-  [![R-CMD-check](https://github.com/matt-s-gibbs/TUFLOWR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/matt-s-gibbs/TUFLOWR/actions/workflows/R-CMD-check.yaml)
+  [![R-CMD-check](https://github.com/matt-s-gibbs/TUFLOWR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/matt-s-gibbs/TUFLOWR/actions/workflows/R-CMD-check.yaml) 
 <!-- badges: end -->
 
 TUFLOWR provides some helper functions for working with [TUFLOW FV](https://www.tuflow.com/products/tuflow-fv/) models in R. Current functionality includes generating spatially interpolated initial conditions based on point observations and the model mesh, as well as loading POINTS files into the R environment and plotting with ggplot.
