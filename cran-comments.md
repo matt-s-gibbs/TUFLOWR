@@ -1,25 +1,38 @@
 # Test environments
-* local R installation, R 4.1.3
-* win-builder release and devel
-* Windows Server 2022, R-devel, 64 bit
-* rhub Ubuntu Linux 20.04.1 LTS, R-release, GCC
-* rhub Fedora Linux, R-devel, clang, gfortran
+- Github actions:
+ - Ubuntu latest, release, devel, oldrel-1
+ - windows latest, release
+ - macOS latest, release
+- devtools::check_win_release()
+- local R windows installation, R 4.4.1
 
-# R CMD check results
+# Github actions
 
-0 errors √ | 0 warnings √ | 1 note x
+All environments:
 
-## win-builder NOTE
+0 errors √ | 0 warnings √ | 0 note √
 
-> checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Matt Gibbs <gibbs.ms@gmail.com>'
-  New submission
-  
-  
-## Rhub Windows Server 2022, R-devel, 64 bit NOTE
+# check_win_release()
+0 errors √ | 1 warnings √ | 1 note √
 
-> checking for detritus in the temp directory ... NOTE
-  Found the following files/directories:
-    'lastMiKTeXException'
+NOTE
+Maintainer: 'Matt Gibbs <gibbs.ms@gmail.com>'
+
+WARNING
+Found the following (possibly) invalid URLs:
+  URL: <https://github.com/matt-s-gibbs/TUFLOWR>
+    From: man/TUFLOWR.Rd
+    Message: Invalid URI scheme
     
-Apparently this is a [bug in Rhub](https://github.com/r-hub/rhub/issues/503)
+This is a valid link, inserted by roxygen2
+
+# Local windows
+0 errors ✔ | 1 warning ✖ | 1 note ✖
+
+WARNING
+  checkRd: (7) TUFLOWR.Rd:15: Invalid URL: <https://github.com/matt-s-gibbs/TUFLOWR>
+  
+This is a valid link, inserted by roxygen2
+
+NOTE
+  unable to verify current time
