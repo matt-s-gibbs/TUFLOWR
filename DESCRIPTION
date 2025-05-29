@@ -6,7 +6,7 @@ Authors@R: person("Matt", "Gibbs", email = "gibbs.ms@gmail.com",
     role = c("aut", "cre"))
 Author: Matt Gibbs [aut, cre]
 Maintainer: Matt Gibbs <gibbs.ms@gmail.com>
-URL: <https://github.com/matt-s-gibbs/TUFLOWR>
+URL: https://github.com/matt-s-gibbs/TUFLOWR
 Description: Helper functions for 'TUFLOW FV' models. Current functionality includes reading in and plotting
     output POINTS files and generating initial conditions based on point observations.
 License: GPL-3

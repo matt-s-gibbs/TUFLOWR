@@ -12,7 +12,7 @@ output POINTS files and generating initial conditions based on point observation
 \seealso{
 Useful links:
 \itemize{
-  \item \url{<https://github.com/matt-s-gibbs/TUFLOWR>}
+  \item \url{https://github.com/matt-s-gibbs/TUFLOWR}
 }
 
 }
