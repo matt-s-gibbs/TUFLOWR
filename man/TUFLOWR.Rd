@@ -2,9 +2,21 @@
 % Please edit documentation in R/TUFLOWR.R
 \docType{package}
 \name{TUFLOWR}
+\alias{TUFLOWR-package}
 \alias{TUFLOWR}
 \title{TUFLOWR}
 \description{
 Helper functions for 'TUFLOW FV' models. Current functionality includes reading in and plotting
 output POINTS files and generating initial conditions based on point observations.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{<https://github.com/matt-s-gibbs/TUFLOWR>}
+}
+
+}
+\author{
+\strong{Maintainer}: Matt Gibbs \email{gibbs.ms@gmail.com}
+
 }

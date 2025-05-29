@@ -1,7 +1,7 @@
 #' Generate a TFV initial conditions file from point observations
 #' @param file .2dm mesh used to generate the cell IDs and centres
 #' @param fgdb Shape file (.shp and associated .prj) for zones to be preserved
-#' @param initialvaluesfile csv file with observed data to interpolate
+#' @param initialvaluesfile a string with a csv file with observed data to interpolate, or a data.frame with the data
 #' @param outputfile file to write the initial conditions to
 #' @param cellsize size of cells to interpolate the observations onto
 #' @param ncell number of cells to interpolate the observations onto
@@ -74,12 +74,21 @@ for(elementID in elementIDs)
 
 elements<-elements %>% dplyr::arrange(.data$ID)
 
-initvals<-readr::read_csv(initialvaluesfile)
+if(is.character(initialvaluesfile)){
+  initvals <- readr::read_csv(initialvaluesfile)
+}else if(is.data.frame(initialvaluesfile)) {
+  initvals <- initialvaluesfile
+}else{
+  stop("initialvaluesfile must be a character string or a data frame")
+}
 
-Wall<-sf::read_sf(dsn=fgdb,layer="Zones")
+Wall<-sf::read_sf(dsn=fgdb)
+#Wall <- as(Wall,"Spatial")
+Wall <- sf::as_Spatial(Wall)
 
-P<-sp::SpatialPoints(initvals[,c("X","Y")],proj4string = Wall@proj4string)
-Pall<-sp::SpatialPointsDataFrame(P,initvals)
+P<-sf::st_as_sf(initvals, coords = c("X", "Y"), crs = sf::st_crs(Wall))
+#Pall <- as(P,"Spatial")
+Pall <- sf::as_Spatial(P)
 
 elements_points<-elements
 sp::coordinates(elements_points)=~X+Y

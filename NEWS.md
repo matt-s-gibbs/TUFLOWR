@@ -1,3 +1,6 @@
+# TUFLOWR 0.1.2
+* Fix and additional functionality to TFVInitCons()
+
 # TUFLOWR 0.1.1
 
 * shape file read replaced with sf::read_sf due to retiring of rgdal

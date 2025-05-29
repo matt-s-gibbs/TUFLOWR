@@ -1,7 +1,7 @@
 Package: TUFLOWR
 Type: Package
 Title: Helper Functions for 'TUFLOW FV' Models
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: person("Matt", "Gibbs", email = "gibbs.ms@gmail.com",
     role = c("aut", "cre"))
 Author: Matt Gibbs [aut, cre]
@@ -26,6 +26,6 @@ Imports:
   ggplot2,
   rlang,
   magrittr
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Suggests: 
     covr

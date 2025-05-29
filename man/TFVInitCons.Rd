@@ -18,7 +18,7 @@ TFVInitCons(
 
 \item{fgdb}{Shape file (.shp and associated .prj) for zones to be preserved}
 
-\item{initialvaluesfile}{csv file with observed data to interpolate}
+\item{initialvaluesfile}{a string with a csv file with observed data to interpolate, or a data.frame with the data}
 
 \item{outputfile}{file to write the initial conditions to}
 
