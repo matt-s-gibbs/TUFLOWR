@@ -19,7 +19,7 @@
 #' \item{Columns 4 and 5 are reserved for point information, e.g. a station number and station name.
 #'  These are not used, but all for context to be documented, and helpful and if the same csv file is also used for specifying locations in a points output block in the model .fvc file.}
 #' \item{Columns 6 and beyond should be values and will be interpolated. Each column will be interpolated for each zone,
-#' allowing for multiple initial conditions. The column name should match the model scalar (e.g. H, SAL, TEMP, trace_1)}
+#' allowing for multiple initial conditions. The column name should match the model scalar (e.g. WL, SAL, TEMP, trace_1)}
 #' }
 #'
 #' cellsize and ncell are used to specify the resolution of the interpolation. ncell is in units of the mesh coordinates, e.g. m or degrees
@@ -135,5 +135,5 @@ elements<-elements %>% dplyr::bind_cols(dat)
 }
 
 #print(summary(elements))
-write.csv(elements,outputfile,row.names = FALSE)
+write.csv(elements,outputfile,row.names = FALSE, quote=FALSE)
 }
