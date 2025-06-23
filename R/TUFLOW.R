@@ -17,7 +17,7 @@
 TFVGetResults<-function(Resultfile,parameter,RunName,stations=NULL, dailyaverage=FALSE)
 {
   A<-readr::read_csv(Resultfile)
-  A<-A %>% dplyr::mutate(TIME=as.POSIXct(.data$TIME,format="%d/%m/%Y %H:%M:%S"))
+  A<-A %>% dplyr::mutate(TIME=as.POSIXct(.data$TIME,format="%d/%m/%Y %H:%M:%S", tz="UTC"))
 
   names<-sapply(strsplit(colnames(A %>% dplyr::select(.data$TIME,dplyr::contains(parameter))),"_"),"[[",1) #strip out everything after "_"
   if(is.null(stations)) stations<-names[-1] #not time
